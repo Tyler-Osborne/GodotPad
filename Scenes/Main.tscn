@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 512.0
+margin_bottom = 580.0
+smooth_scrolling = true
+wrap_enabled = true
+minimap_draw = true
+
+[node name="OpenButton" type="Button" parent="."]
+margin_left = 528.0
+margin_top = 16.0
+margin_right = 540.0
+margin_bottom = 36.0
+text = "Open File"
+
+[node name="SaveButton" type="Button" parent="."]
+margin_left = 624.0
+margin_top = 16.0
+margin_right = 698.0
+margin_bottom = 36.0
+text = "Save File As"
+
+[node name="OpenFileDialog" type="FileDialog" parent="."]
+margin_left = 16.0
+margin_top = 36.0
+margin_right = 500.0
+margin_bottom = 416.0
+window_title = "Open File"
+resizable = true
+mode = 0
+access = 2
+current_dir = "/OneDrive/Documents/Projects/Godot/Godot Edit"
+current_path = "/OneDrive/Documents/Projects/Godot/Godot Edit/"
+
+[node name="SaveFileDialog" type="FileDialog" parent="."]
+margin_left = 16.0
+margin_top = 36.0
+margin_right = 500.0
+margin_bottom = 416.0
+window_title = "Save File As"
+resizable = true
+access = 2
+current_dir = "/OneDrive/Documents/Projects/Godot/Godot Edit"
+current_path = "/OneDrive/Documents/Projects/Godot/Godot Edit/"
+
+[connection signal="pressed" from="OpenButton" to="." method="_on_OpenButton_pressed"]
+[connection signal="pressed" from="SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="file_selected" from="OpenFileDialog" to="." method="_on_OpenFileDialog_file_selected"]
+[connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
