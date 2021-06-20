@@ -31,8 +31,8 @@ window_title = "Open a File"
 resizable = true
 mode = 0
 access = 2
-current_dir = "/OneDrive/Documents/Projects/Godot/Godot Edit"
-current_path = "/OneDrive/Documents/Projects/Godot/Godot Edit/"
+current_dir = "/OneDrive/Documents/Projects/Godot/GodotPad"
+current_path = "/OneDrive/Documents/Projects/Godot/GodotPad/"
 
 [node name="SaveFileDialog" type="FileDialog" parent="."]
 margin_left = 16.0
@@ -42,8 +42,8 @@ margin_bottom = 416.0
 window_title = "Save File As"
 resizable = true
 access = 2
-current_dir = "/OneDrive/Documents/Projects/Godot/Godot Edit"
-current_path = "/OneDrive/Documents/Projects/Godot/Godot Edit/"
+current_dir = "/OneDrive/Documents/Projects/Godot/GodotPad"
+current_path = "/OneDrive/Documents/Projects/Godot/GodotPad/"
 
 [node name="MenuButtonFile" type="MenuButton" parent="."]
 margin_left = 16.0
