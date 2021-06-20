@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Godot Edit"
+config/name="GodotPad"
 run/main_scene="res://Scenes/TextEditor.tscn"
 run/low_processor_mode=true
 config/icon="res://icon.png"
