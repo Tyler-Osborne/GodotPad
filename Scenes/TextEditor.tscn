@@ -68,12 +68,57 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WindowDialog" type="WindowDialog" parent="."]
-visible = true
-margin_left = 256.0
-margin_top = 152.0
-margin_right = 768.0
-margin_bottom = 448.0
+[node name="HelpWindow" type="WindowDialog" parent="."]
+margin_left = 320.0
+margin_top = 208.0
+margin_right = 640.0
+margin_bottom = 384.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HelpWindow"]
+margin_right = 320.0
+margin_bottom = 176.0
+text = "Placeholder"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HelpButton" type="Button" parent="HelpWindow"]
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 183.0
+margin_bottom = 156.0
+text = "Close"
+
+[node name="AboutWindow" type="WindowDialog" parent="."]
+margin_left = 320.0
+margin_top = 208.0
+margin_right = 640.0
+margin_bottom = 384.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="AboutWindow"]
+margin_left = 72.0
+margin_top = 16.0
+margin_right = 240.0
+margin_bottom = 104.0
+text = "Placeholder"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="AboutButton" type="Button" parent="AboutWindow"]
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 183.0
+margin_bottom = 156.0
+text = "Close"
 
 [connection signal="file_selected" from="OpenFileDialog" to="." method="_on_OpenFileDialog_file_selected"]
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
+[connection signal="pressed" from="HelpWindow/HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="pressed" from="AboutWindow/AboutButton" to="." method="_on_AboutButton_pressed"]
