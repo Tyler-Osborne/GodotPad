@@ -1,41 +1,33 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/TextEditor.gd" type="Script" id=1]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextEdit" type="TextEdit" parent="."]
 margin_left = 16.0
-margin_top = 16.0
-margin_right = 512.0
+margin_top = 40.0
+margin_right = 1008.0
 margin_bottom = 580.0
 smooth_scrolling = true
 wrap_enabled = true
 minimap_draw = true
-
-[node name="OpenButton" type="Button" parent="."]
-margin_left = 528.0
-margin_top = 16.0
-margin_right = 540.0
-margin_bottom = 36.0
-text = "Open File"
-
-[node name="SaveButton" type="Button" parent="."]
-margin_left = 624.0
-margin_top = 16.0
-margin_right = 698.0
-margin_bottom = 36.0
-text = "Save File As"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="OpenFileDialog" type="FileDialog" parent="."]
 margin_left = 16.0
 margin_top = 36.0
 margin_right = 500.0
 margin_bottom = 416.0
-window_title = "Open File"
+window_title = "Open a File"
 resizable = true
 mode = 0
 access = 2
@@ -53,7 +45,35 @@ access = 2
 current_dir = "/OneDrive/Documents/Projects/Godot/Godot Edit"
 current_path = "/OneDrive/Documents/Projects/Godot/Godot Edit/"
 
-[connection signal="pressed" from="OpenButton" to="." method="_on_OpenButton_pressed"]
-[connection signal="pressed" from="SaveButton" to="." method="_on_SaveButton_pressed"]
+[node name="MenuButtonFile" type="MenuButton" parent="."]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 64.0
+margin_bottom = 32.0
+text = "File"
+switch_on_hover = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButtonHelp" type="MenuButton" parent="."]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 128.0
+margin_bottom = 32.0
+focus_mode = 2
+text = "Help"
+switch_on_hover = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+visible = true
+margin_left = 256.0
+margin_top = 152.0
+margin_right = 768.0
+margin_bottom = 448.0
+
 [connection signal="file_selected" from="OpenFileDialog" to="." method="_on_OpenFileDialog_file_selected"]
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
